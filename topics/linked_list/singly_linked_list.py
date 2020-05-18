@@ -136,22 +136,3 @@ class SinglyLinkedList:
             index += 1
 
     # Merge
-
-
-mylist1 = SinglyLinkedList()
-mylist2 = SinglyLinkedList()
-
-mylist1.insert_end(34)
-mylist1.insert_end(2)
-mylist1.insert_end(7)
-mylist1.insert_end(122)
-mylist1.insert_end(24)
-mylist1.sort_list()
-mylist1.print_list()
-print("----------")
-mylist2.insert_end(44)
-mylist2.insert_end(32)
-mylist2.insert_end(200)
-mylist2.sort_list()
-mylist2.print_list()
-print("----------")
