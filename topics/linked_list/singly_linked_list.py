@@ -135,4 +135,38 @@ class SinglyLinkedList:
             current = current.next
             index += 1
 
-    # Merge
+def merge_lists(nodeA, nodeB):
+    new_node = Node(-1)
+    merged = new_node
+    while(nodeA or nodeB):
+        if not nodeA:
+            merged.next = nodeB
+            break
+        if not nodeB:
+            merged.next = nodeA
+            break
+        if(nodeA.data < nodeB.data):
+            merged.next = nodeA
+            nodeA = nodeA.next
+        else:
+            merged.next = nodeB
+            nodeB = nodeB.next
+        merged = merged.next
+    if(nodeA):
+        merged.next = nodeA
+    else:
+        merged.next = nodeB
+    return new_node.next
+
+list1 = SinglyLinkedList()
+list2 = SinglyLinkedList()
+
+list1.insert_sorted(3)
+list1.insert_sorted(4)
+list1.insert_sorted(2)
+
+list2.insert_sorted(9)
+list2.insert_sorted(7)
+list2.insert_sorted(1)
+
+merge_lists(list1.head, list2.head)
