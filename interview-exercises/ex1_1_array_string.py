@@ -22,14 +22,11 @@ frequency = {}
 #
 # print(frequency)
 
- # [{20 => 'a'}, {21 => 'b'}, {23 => c}]
+ # [{20 => 'a'}, {21 => 'b'}, {23 => c}] ...
 hash_table = []
 
-def hashing_func(key):
-    return key % len(string.ascii_lowercase)
-
 def insert(hash_table, key, value):
-    hash_key = hashing_func(key)
+    hash_key = key % len(string.ascii_lowercase)
     hash_table.insert(hash_key, {hash_key: value})
 
 def search(hash_table, key):
