@@ -135,6 +135,16 @@ class SinglyLinkedList:
             current = current.next
             index += 1
 
+    def reverse_list(self):
+        prev = None
+        current = self.head
+        while current:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
 def merge_lists(nodeA, nodeB):
     new_node = Node(-1)
     merged = new_node
@@ -159,14 +169,21 @@ def merge_lists(nodeA, nodeB):
     return new_node.next
 
 list1 = SinglyLinkedList()
-list2 = SinglyLinkedList()
+# list2 = SinglyLinkedList()
 
 list1.insert_sorted(3)
 list1.insert_sorted(4)
 list1.insert_sorted(2)
 
-list2.insert_sorted(9)
-list2.insert_sorted(7)
-list2.insert_sorted(1)
+list1.print_list()
 
-merge_lists(list1.head, list2.head)
+print("------")
+
+# list2.insert_sorted(9)
+# list2.insert_sorted(7)
+# list2.insert_sorted(1)
+#
+# merge_lists(list1.head, list2.head)
+
+list1.reverse_list()
+list1.print_list()
