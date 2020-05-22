@@ -1,4 +1,4 @@
-# Delete duplicate-value nodes from a sorted linked list
+# Delete duplicate-value nodes from a sorted linked list - https://www.hackerrank.com/challenges/delete-duplicate-value-nodes-from-a-sorted-linked-list/problem
 #!/bin/python3
 
 import math
