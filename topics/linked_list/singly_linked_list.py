@@ -90,20 +90,19 @@ class SinglyLinkedList:
 
     def remove_element(self, element):
         current = self.head
+        if current == None:
+            return
         if current.data == element:
-            if current.next:
-                self.head = self.head.next
-        if current.next:
-            while current.next:
-                if current.next.data == element:
-                    if current.next.next:
-                        current.next = current.next.next
-                    else:
-                        current.next = None
-                        return
-                current = current.next
+            self.head = current.next
         else:
-            self.head = None
+            previous = current
+            current = current.next
+            while current:
+                if current.data == element:
+                    previous.next = current.next
+                    return
+                previous = current
+                current = current.next
 
     # Display
 
